@@ -1,0 +1,27 @@
+solution 1:
+
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        prevMap = {} 
+
+        for i, n in enumerate(nums):
+            diff = target - n
+            if diff in prevMap:
+                return [prevMap[diff], i]
+            prevMap[n] = i
+
+solution 2:
+
+
+class Solution:
+    
+    def twoSum(self, nums, target):
+        seen_numbers = {}
+            for index in range(len(nums)):
+            number = nums[index]
+            difference = target - number
+            if difference in seen_numbers:
+                return [seen_numbers[difference], index]
+            
+            seen_numbers[number] = index
