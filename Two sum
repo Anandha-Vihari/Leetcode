@@ -25,3 +25,36 @@ class Solution:
                 return [seen_numbers[difference], index]
             
             seen_numbers[number] = index
+
+
+solution to run in local:
+
+
+class Solution:
+    
+    def twoSum(self, nums, target):
+        numbers = {}
+        for index in range(len(nums)):
+            number = nums[index]
+            difference = target - number
+            if difference in numbers:
+                return [numbers[difference], index]
+            numbers[number] = index
+
+# Asking for input from the console
+if __name__ == "__main__":
+    # Input for the list of numbers
+    nums = list(map(int, input("Enter the list of numbers separated by spaces: ").split()))
+    
+    # Input for the target number
+    target = int(input("Enter the target number: "))
+    
+    # Create a Solution object and call the twoSum method
+    solution = Solution()
+    result = solution.twoSum(nums, target)
+    
+    if result:
+        print(f"Indices of numbers that add up to {target} are: {result}")
+    else:
+        print("No two numbers add up to the target.")
+
